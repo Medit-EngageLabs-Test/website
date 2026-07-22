@@ -1,0 +1,16 @@
+<section id="servizi" class="section services">
+  <div class="section-inner">
+    <p class="eyebrow">Cosa facciamo</p>
+    <h2 class="section-title">Servizi pensati per il tuo prodotto digitale</h2>
+
+    <ul class="service-grid">
+      @for (service of services; track service.title) {
+        <li class="service-card">
+          <mat-icon aria-hidden="true">{{ service.icon }}</mat-icon>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

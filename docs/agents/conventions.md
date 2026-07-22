@@ -23,9 +23,11 @@ preference.
 - **Angular Material is the reference UI library** and is already installed and
   themed in this template. Build every new interface with Material components;
   never reintroduce hand-rolled CSS component libraries.
-  - The theme is generated from the canonical MEDIT palette and lives in
+  - The theme is generated from the **Engage Labs brand palette** (primary cyan
+    from the logo, secondary steel-blue, tertiary sage-green) and lives in
     `App/frontend/src/theme/_theme-colors.scss` (single point of definition —
-    regenerate it, never edit it by hand).
+    regenerate it with `ng generate @angular/material:theme-color`, never edit
+    it by hand).
   - Style exclusively through `--mat-sys-*` system tokens; no hardcoded hex.
   - Prefer Material components over browser primitives (`MatDialog` instead of
     `confirm()` — see `shared/confirm-dialog/` — `MatSnackBar` instead of

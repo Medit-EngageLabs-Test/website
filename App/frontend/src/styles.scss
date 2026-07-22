@@ -4,9 +4,13 @@
 html {
   height: 100%;
 
-  // Punto unico della palette: il tema è generato dagli stessi seed del
-  // portale IntelliFlow (palette canonica MEDIT). Un cambio di brand si
-  // risolve rigenerando src/theme/_theme-colors.scss con
+  // Scroll fluido quando il menu porta a una sezione ad ancora.
+  scroll-behavior: smooth;
+
+  // Punto unico della palette: il tema è generato dai seed del brand
+  // Engage Labs (primary ciano del logo, secondary azzurro-acciaio,
+  // tertiary verde salvia). Un cambio di brand si risolve rigenerando
+  // src/theme/_theme-colors.scss con
   // `ng generate @angular/material:theme-color` e ricompilando.
   @include mat.theme(
     (
@@ -36,5 +40,39 @@ body {
 }
 
 a {
+  color: var(--mat-sys-primary);
+}
+
+// ── Layout condiviso delle sezioni della landing ──────────────────────────────
+// Ogni sezione è una fascia a piena larghezza; il contenuto è incolonnato e
+// centrato entro una misura leggibile. `scroll-margin-top` compensa l'header
+// sticky quando si arriva a una sezione dal menu.
+.section {
+  padding: clamp(3rem, 8vw, 6rem) 0;
+}
+
+// Compensa l'header sticky quando si atterra su un elemento ancorato dal menu.
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  font: var(--mat-sys-headline-medium);
+  margin-bottom: 1.5rem;
+}
+
+// Etichetta sopra il titolo di sezione ("occhiello"), condivisa fra le sezioni.
+.eyebrow {
+  margin-bottom: 0.75rem;
+  font: var(--mat-sys-label-large);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--mat-sys-primary);
 }
