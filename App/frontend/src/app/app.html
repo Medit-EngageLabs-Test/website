@@ -1,5 +1,7 @@
 <mat-toolbar class="site-header">
-  <a class="brand" href="#chi-siamo">{{ brand }}</a>
+  <a class="brand" href="#chi-siamo">
+    <img class="brand-logo" src="logo.jpg" [alt]="brand" />
+  </a>
   <span class="header-spacer"></span>
   <nav class="site-nav" aria-label="Navigazione principale">
     @for (link of navLinks; track link.fragment) {

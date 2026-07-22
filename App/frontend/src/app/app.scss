@@ -11,10 +11,13 @@
   display: inline-flex;
   align-items: center;
   min-height: 48px;
-  font: var(--mat-sys-title-large);
-  letter-spacing: 0.01em;
-  color: var(--mat-sys-on-surface);
   text-decoration: none;
+}
+
+.brand-logo {
+  display: block;
+  height: 32px;
+  width: auto;
 }
 
 .header-spacer {

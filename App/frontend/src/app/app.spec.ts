@@ -19,10 +19,12 @@ describe('App', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('mostra il brand "Engage Labs" nella navbar', async () => {
+  it('mostra il logo Engage Labs nella navbar', async () => {
     const { element } = await setup();
     expect(element.querySelector('mat-toolbar')).not.toBeNull();
-    expect(element.querySelector('.brand')?.textContent).toContain('Engage Labs');
+    const logo = element.querySelector('.brand img.brand-logo');
+    expect(logo).not.toBeNull();
+    expect(logo?.getAttribute('alt')).toBe('Engage Labs');
   });
 
   it('espone i link del menu verso le sezioni ad ancora', async () => {
