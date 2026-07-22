@@ -7,9 +7,10 @@ html {
   // Scroll fluido quando il menu porta a una sezione ad ancora.
   scroll-behavior: smooth;
 
-  // Punto unico della palette: il tema è generato dagli stessi seed del
-  // portale IntelliFlow (palette canonica MEDIT). Un cambio di brand si
-  // risolve rigenerando src/theme/_theme-colors.scss con
+  // Punto unico della palette: il tema è generato dai seed del brand
+  // Engage Labs (primary ciano del logo, secondary azzurro-acciaio,
+  // tertiary verde salvia). Un cambio di brand si risolve rigenerando
+  // src/theme/_theme-colors.scss con
   // `ng generate @angular/material:theme-color` e ricompilando.
   @include mat.theme(
     (
