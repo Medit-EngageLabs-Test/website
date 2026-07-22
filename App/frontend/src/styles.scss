@@ -65,3 +65,13 @@ a {
   font: var(--mat-sys-headline-medium);
   margin-bottom: 1.5rem;
 }
+
+// Etichetta sopra il titolo di sezione ("occhiello"), condivisa fra le sezioni.
+.eyebrow {
+  margin-bottom: 0.75rem;
+  font: var(--mat-sys-label-large);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mat-sys-primary);
+}

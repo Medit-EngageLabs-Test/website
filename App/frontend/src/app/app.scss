@@ -8,8 +8,10 @@
 }
 
 .brand {
-  font-size: 1.15rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  font: var(--mat-sys-title-large);
   letter-spacing: 0.01em;
   color: var(--mat-sys-on-surface);
   text-decoration: none;
@@ -25,7 +27,9 @@
 }
 
 .site-nav a {
-  padding: 0.25rem 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
   font: var(--mat-sys-title-small);
   color: var(--mat-sys-on-surface-variant);
   text-decoration: none;
@@ -35,16 +39,13 @@
     border-color 0.15s ease;
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.site-nav a:focus-visible {
   color: var(--mat-sys-primary);
   border-bottom-color: var(--mat-sys-primary);
 }
 
 @media (max-width: 600px) {
-  .brand {
-    font-size: 1rem;
-  }
-
   .site-nav {
     gap: 1rem;
   }
