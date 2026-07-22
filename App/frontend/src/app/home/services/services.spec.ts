@@ -17,6 +17,16 @@ describe('Services', () => {
   it('rende la sezione ancorata #servizi con il titolo', async () => {
     const { element } = await setup();
     expect(element.querySelector('#servizi')).not.toBeNull();
-    expect(element.querySelector('.section-title')?.textContent).toContain('Cosa facciamo');
+    expect(element.querySelector('.section-title')?.textContent).toContain('Servizi');
+  });
+
+  it('rende una scheda per ogni servizio, con icona e titolo', async () => {
+    const { element } = await setup();
+    const cards = element.querySelectorAll('.service-card');
+    expect(cards.length).toBe(4);
+    cards.forEach((card) => {
+      expect(card.querySelector('mat-icon')).not.toBeNull();
+      expect(card.querySelector('h3')?.textContent?.trim().length).toBeGreaterThan(0);
+    });
   });
 });
