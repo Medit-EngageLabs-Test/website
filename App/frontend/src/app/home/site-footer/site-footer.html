@@ -1,5 +1,20 @@
 <footer id="contatti" class="site-footer">
-  <div class="section-inner">
-    <p>Contenuto in preparazione.</p>
+  <div class="section-inner footer-grid">
+    <div class="footer-brand">
+      <p class="brand">Engage Labs</p>
+      <p class="tagline">Software su misura per far crescere il tuo business.</p>
+    </div>
+
+    <div class="footer-contacts">
+      <h3>Contatti</h3>
+      <p>
+        <a [href]="'mailto:' + email">{{ email }}</a>
+      </p>
+      <p>{{ address }}</p>
+    </div>
+  </div>
+
+  <div class="section-inner footer-bottom">
+    <p>© {{ year }} Engage Labs. Tutti i diritti riservati.</p>
   </div>
 </footer>

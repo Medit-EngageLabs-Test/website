@@ -14,8 +14,22 @@ describe('SiteFooter', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('rende il footer ancorato #contatti', async () => {
+  it('rende il footer ancorato #contatti con il brand', async () => {
     const { element } = await setup();
-    expect(element.querySelector('footer#contatti')).not.toBeNull();
+    const footer = element.querySelector('footer#contatti');
+    expect(footer).not.toBeNull();
+    expect(footer?.querySelector('.brand')?.textContent).toContain('Engage Labs');
+  });
+
+  it('espone un link email mailto', async () => {
+    const { element } = await setup();
+    const mail = element.querySelector('a[href^="mailto:"]');
+    expect(mail?.getAttribute('href')).toBe('mailto:info@engagelabs.it');
+  });
+
+  it('mostra la riga di copyright con l’anno corrente', async () => {
+    const { element } = await setup();
+    const year = new Date().getFullYear().toString();
+    expect(element.querySelector('.footer-bottom')?.textContent).toContain(year);
   });
 });
