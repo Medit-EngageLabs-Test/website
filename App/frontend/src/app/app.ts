@@ -1,18 +1,26 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatToolbar } from '@angular/material/toolbar';
-import { MatIconButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
-import { UserStore } from './auth/user-store';
 
-/** Root shell: the toolbar with the signed-in user, wrapping the routed views. */
+/** Una voce del menu: etichetta visibile e ancora (id di sezione) verso cui scrollare. */
+interface NavLink {
+  readonly label: string;
+  readonly fragment: string;
+}
+
+/** Shell del sito vetrina: header sticky con il brand e il menu ad ancore, sopra la pagina. */
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatToolbar, MatIconButton, MatIcon],
+  imports: [RouterOutlet, MatToolbar],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  protected readonly user = inject(UserStore);
+  protected readonly brand = 'Engage Labs';
+  protected readonly navLinks: readonly NavLink[] = [
+    { label: 'Chi siamo', fragment: 'chi-siamo' },
+    { label: 'Servizi', fragment: 'servizi' },
+    { label: 'Contatti', fragment: 'contatti' },
+  ];
 }
